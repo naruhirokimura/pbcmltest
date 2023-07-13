@@ -1,0 +1,11 @@
+
+numpy
+pandas
+gunicorn
+matplotlib
+XGBoost
+metrics
+Sklearn
+StandardScaler
+mljar-mercury>=0.5.1
+opencv-python-headless
