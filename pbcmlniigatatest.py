@@ -6,7 +6,7 @@ import xgboost as xgb
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-st.title('The prediction model for treatrment response in PBC patients')
+st.title('The prediction model for treatrment response in patients with PBC.')
 st.write('This app aims to predict treatment response for Primary Biliary Cholangitis patients base on Machine learning')
 st.write('Please enter pre-treatment data by moving the slide bar.')
 
