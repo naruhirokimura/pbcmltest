@@ -3,6 +3,8 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 from xgboost import XGBClassifier
+from sklearn import metrics
+import matplotlib.pyplot as plt
 
 with open('model.pickle', 'wb') as f:
     model = pickle.load(f)
