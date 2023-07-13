@@ -6,8 +6,8 @@ from xgboost import XGBClassifier
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
-with open('model.pickle', 'wb') as f:
-    model = pickle.load(f)
+filename = 'ml_model.sav'
+model_load = pickle.load(open(filename, 'rb'))
 
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
@@ -18,5 +18,5 @@ sample = np.array([['TP','ALT','Tbil'],[TP, ALT, Tbil]])
 dfsample = pd.DataFrame(data=[[TP, ALT, Tbil]], columns=['TP','ALT','Tbil'])
 st.write(dfsample)    
 
-pd1=model.predict_proba(dfsample)
-st.write(pd1)   
+predict = model_load.predict(dfsample)
+st.write(predict)   
