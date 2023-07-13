@@ -16,7 +16,4 @@ dfsample = pd.DataFrame(data=[[TP, ALT, Tbil]], columns=['TP','ALT','Tbil'])
 st.write(dfsample)    
 
 pd1=model.predict_proba(dfsample)
-if pd1[0,1] <0.841:
-  st.write("This patient may not archieve Paris II criteria, please consider additional treatment.")
-else:
-  st.write('This patient will archieve Paris II criteria')
+st.write(pd1)   
