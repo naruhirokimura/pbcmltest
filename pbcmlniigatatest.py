@@ -20,4 +20,4 @@ st.write(dfsample)
 
 
 predst = modelst2.predict(xgb.DMatrix(dfsample))
-st.writet(predst)
+st.write(predst)
