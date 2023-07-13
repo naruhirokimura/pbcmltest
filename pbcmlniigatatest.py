@@ -4,18 +4,11 @@ import pandas as pd
 with open('model.pickle', 'rb') as f:
     model = pickle.load(f)
 
-PT = st.sidebar.slider('PT (%)',min_value=0, max_value=130,value=100)
-ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=0, max_value=400,value=40)
-Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0, max_value=10,value=1.0, step=0.1)
-BUN = st.sidebar.slider(label='BUN (mg/dL)', min_value=0, max_value=130,value=20)
 
-#サンプルデータの読み込み
-sample = np.array([['PT', 'ALT', 'Tbil','BUN'],
-              [PT, ALT, Tbil, BUN]])
-dfsample = pd.DataFrame(data=[[PT, ALT, Tbil, BUN]], columns=['PT(%)', 'ALT (IU/l)', 'T-Bil (md/dl)', 'BUN (mg/dl)'])
-print(dfsample)
-pd1=model.predict_proba(dfsample)
-if pd1[0,1] <0.841:
-  print("This patient will not archieve Paris II criteria")
-else:
-  print('This patient will archieve Paris II criteria')
+TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
+ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
+Tbil = st.sidebar.slider(label='T-Bil (mg/dL)', min_value=0.2, max_value=4.3,value=1.0, step=0.1)
+
+sample = np.array([['TP','ALT','Tbil'],[TP, ALT, Tbil]])
+dfsample = pd.DataFrame(data=[[TP, ALT, Tbil]], columns=['TP','ALT','Tbil'])
+st.write(dfsample)    
