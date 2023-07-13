@@ -25,7 +25,7 @@ st.write(dfsample)
 predst = modelst2.predict(xgb.DMatrix(dfsample))
 
 
-if pd1[0,1] <0.841:
+if predst <0.841:
   st.write("This patient may not archieve Paris II criteria, please consider additional treatment.")
 else:
   st.write('This patient will archieve Paris II criteria')
