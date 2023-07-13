@@ -2,7 +2,7 @@ import pickle
 import numpy as np
 import pandas as pd
 import streamlit as st
-from xgboost import XGBClassifier
+from xgboost import XGBClassifier as xgb
 from sklearn import metrics
 import matplotlib.pyplot as plt
 
