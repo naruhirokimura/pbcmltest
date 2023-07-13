@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-with open('model.pickle', 'rb') as f:
+with open('model.pickle', 'wb') as f:
     model = pickle.load(f)
 
 
