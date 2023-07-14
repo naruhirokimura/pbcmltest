@@ -7,12 +7,11 @@ from sklearn import metrics
 import matplotlib.pyplot as plt
 
 st.title('The prediction model for treatrment response in patients with PBC.')
-st.write('This app aims to predict treatment response for Primary Biliary Cholangitis patients base on Machine learning')
+st.write('This app aims to predict treatment response for patients with Primary Biliary Cholangitis base on Machine learning')
 st.write('Please enter pre-treatment data by moving the slide bar.')
 
 modelst2 = xgb.Booster()
 modelst2.load_model("modelst.json")
-
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
