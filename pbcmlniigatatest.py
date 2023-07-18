@@ -22,7 +22,8 @@ dfsample = pd.DataFrame(data=[[TP, ALT, Tbil]], columns=['TP','ALT','Tbil'])
 st.write(dfsample)    
 
 predst = modelst2.predict(xgb.DMatrix(dfsample))
-
+st.write(predst)
+st.write("the patient with data over 0.841 would arcieve Paris II criteria.")
 
 if predst <0.841:
   st.write("This patient may not archieve Paris II criteria, please consider additional treatment.")
