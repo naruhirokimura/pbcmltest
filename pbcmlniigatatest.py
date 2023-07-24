@@ -11,7 +11,7 @@ st.write('This app aims to predict treatment response for patients with Primary 
 st.write('Please enter pre-treatment data by moving the slide bar.')
 
 modelst2 = xgb.Booster()
-modelst2.load_model("model_2sfs.json")
+modelst2.load_model("modelst.json")
 
 TP = st.sidebar.slider(label='Total protein (g/dL)', min_value=5.5, max_value=9.3,value=8.0, step=0.1)
 ALT = st.sidebar.slider(label='ALT (IU/L)', min_value=8, max_value=1058,value=80)
